@@ -6,7 +6,22 @@
         xmlns:local="clr-namespace:the_debt_book.Views"
         mc:Ignorable="d"
         Title="AddDebtorsWin" Height="275" Width="250">
-
+    <Window.Resources>
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Margin" Value="20"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="Width" Value="70"/>
+            <Setter Property="Height" Value="35"/>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="80" />
@@ -15,41 +30,28 @@
             <RowDefinition Height="80" />
         </Grid.RowDefinitions>
         
-        <TextBlock FontSize="30" 
-                   FontWeight="Bold" 
-                   Text="Add Deptor" 
+        <TextBlock Text="Add Deptor" 
                    Grid.Row="0" 
                    HorizontalAlignment="Center" 
-                   VerticalAlignment="Center" 
-                   Margin="0,0,0,0">
+                   VerticalAlignment="Center">
         </TextBlock>
         
         <TextBox Text="Name" 
-                 Grid.Row="1" 
-                 FontSize="30" 
-                 HorizontalAlignment="Center" 
+                 Grid.Row="1"
                  VerticalAlignment="Top"/>
         
         <TextBox Text="Initial Value" 
-                 Grid.Row="2" 
-                 FontSize="30" 
-                 HorizontalAlignment="Center" 
+                 Grid.Row="2"
                  VerticalAlignment="Bottom"/>
         
-        <Button Grid.Row="3" 
-                Height="35" 
-                Width="70" 
-                HorizontalAlignment="Left" 
-                Margin="20" 
+        <Button Grid.Row="3"
+                HorizontalAlignment="Left"
                 Name="saveButton">
                 Save
         </Button>
         
-        <Button Grid.Row="3" 
-                Height="35" 
-                Width="70" 
-                HorizontalAlignment="Right" 
-                Margin="20" 
+        <Button Grid.Row="3"
+                HorizontalAlignment="Right"
                 Name="cancelButton">
                 Cancel
         </Button>
