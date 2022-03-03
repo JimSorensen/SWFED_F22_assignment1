@@ -48,6 +48,6 @@
                 Close
         </Button>
 
-        <ListBox Margin="10"/>
+        <ListBox Margin="15"/>
     </Grid>
 </Window>
