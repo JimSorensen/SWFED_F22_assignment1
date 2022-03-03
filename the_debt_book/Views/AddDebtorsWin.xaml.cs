@@ -23,5 +23,10 @@ namespace the_debt_book.Views
 		{
 			InitializeComponent();
 		}
+
+		private void CancelBtnClick(object sender, RoutedEventArgs e)
+		{
+			DialogResult = false;
+		}
 	}
 }

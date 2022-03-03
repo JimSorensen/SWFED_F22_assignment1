@@ -23,5 +23,12 @@ namespace the_debt_book.Views
 		{
 			InitializeComponent();
 		}
+
+		private void AddButton_Click(object sender, RoutedEventArgs e)
+		{
+			AddDebtorsWin addDebtorsWin = new AddDebtorsWin();
+			
+			addDebtorsWin.Show();
+		}
 	}
 }

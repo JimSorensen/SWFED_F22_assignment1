@@ -5,15 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:the_debt_book.Views"
         mc:Ignorable="d"
-        Title="mainWindow" Height="450" Width="800">
-    <Grid>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="0.5*"/>
-			<ColumnDefinition/>
+        Title="mainWindow" Height="450" Width="569">
+	<Grid>
+		<ListBox x:Name="DebtersListBoxMainWin" HorizontalAlignment="Left" Height="325" Margin="15,64,0,0" VerticalAlignment="Top" Width="345"/>
+		<Button Content="ADD" HorizontalAlignment="Left" IsEnabled="True" Margin="400,64,0,0" VerticalAlignment="Top" Height="80" Width="110" FontWeight="Bold" FontSize="18" Click="AddButton_Click"/>
+		<Label Content="Debters" HorizontalAlignment="Left" Margin="15,10,0,0" VerticalAlignment="Top" Width="170" Height="36" FontSize="22" FontWeight="Bold"/>
 
-		</Grid.ColumnDefinitions>
-		
-		<Button Content="Button" HorizontalAlignment="Left" Margin="175,149,0,0" VerticalAlignment="Top"/>
 
 	</Grid>
 </Window>
