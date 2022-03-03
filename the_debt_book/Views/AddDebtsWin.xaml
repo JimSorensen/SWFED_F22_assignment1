@@ -6,6 +6,20 @@
         xmlns:local="clr-namespace:the_debt_book.Views"
         mc:Ignorable="d"
         Title="AddDebts" Height="250" Width="300">
+    <Window.Resources>
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="Width" Value="90"/>
+            <Setter Property="Height" Value="35"/>
+        </Style>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="Width" Value="90"/>
+            <Setter Property="Height" Value="35"/>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="170"/>
@@ -15,32 +29,25 @@
             <ColumnDefinition Width="160" />
             <ColumnDefinition Width="140" />
         </Grid.ColumnDefinitions>
+        
         <TextBox Grid.Row="0" 
                  Grid.Column="1" 
                  Text="Value" 
-                 FontSize="20" 
                  HorizontalAlignment="Center" 
-                 Margin="0,0,0,100"
-                 Height="40"
-                 Width="100"
+                 Margin="0,0,0,90"
                  TextAlignment="Center"/>
-        <Button Grid.Row="0" 
-                Grid.Column="1" 
-                Height="40" 
-                Width="100" 
-                Margin="0,0,0,0" 
-                FontSize="20">
+        
+        <Button
+                Grid.Column="1">
                 Add Value
         </Button>
-        <Button Grid.Row="1" 
-                Grid.Column="0" 
-                Height="40" 
-                Width="100" 
-                Name="closeButton" 
-                FontSize="20"
+        
+        <Button Grid.Row="1"
+                Name="closeButton"
                 Margin="0,0,0,20">
                 Close
         </Button>
+
         <ListBox Margin="10"/>
     </Grid>
 </Window>

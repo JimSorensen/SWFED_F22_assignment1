@@ -5,19 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:the_debt_book.Views"
         mc:Ignorable="d"
-        Title="AddDebtorsWin" Height="239" Width="169">
-
-	<Grid Margin="0,0,0,18">
-		<Grid.RowDefinitions>
-			<RowDefinition Height="80" />
-			<RowDefinition Height="*" />
-			<RowDefinition Height="*" />
-			<RowDefinition Height="80" />
-		</Grid.RowDefinitions>
-
-		<TextBlock FontSize="22" 
-                   FontWeight="Bold" 
-                   Text="Add Deptor" 
+        Title="AddDebtorsWin" Height="275" Width="250">
+    <Window.Resources>
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Margin" Value="20"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="Width" Value="70"/>
+            <Setter Property="Height" Value="35"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="80" />
+        </Grid.RowDefinitions>
+        
+        <TextBlock Text="Add Deptor" 
                    Grid.Row="0" 
                    HorizontalAlignment="Center" 
                    VerticalAlignment="Center" 
