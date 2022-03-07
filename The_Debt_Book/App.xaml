@@ -7,11 +7,11 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
 		
-		<DataTemplate DataType="{x:Type viewmodels:HomeViewModel}">
-			<views:HomeView/>
+		<DataTemplate DataType="{x:Type viewmodels:AddDepterViewModel}">
+			<views:AddDepterView/>
 		</DataTemplate>
-		<DataTemplate DataType="{x:Type viewmodels:AccountViewModel}">
-			<views:AccountView/>
+		<DataTemplate DataType="{x:Type viewmodels:AddDeptViewModel}">
+			<views:AddDeptView/>
 		</DataTemplate>
 	</Application.Resources>
 </Application>

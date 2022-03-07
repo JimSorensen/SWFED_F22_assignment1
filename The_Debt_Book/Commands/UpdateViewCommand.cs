@@ -26,13 +26,13 @@ namespace The_Debt_Book.Commands
 
         public void Execute(object parameter)
         {
-            if (parameter.ToString() == "Home")
+            if (parameter.ToString() == "AddDepter")
             {
-                viewModel.SelectedViewModel = new HomeViewModel();
+                viewModel.SelectedViewModel = new AddDepterViewModel();
             }
-            else if (parameter.ToString() == "Account")
+            else if (parameter.ToString() == "AddDept")
             {
-                viewModel.SelectedViewModel = new AccountViewModel();
+                viewModel.SelectedViewModel = new AddDeptViewModel();
             }
         }
     }

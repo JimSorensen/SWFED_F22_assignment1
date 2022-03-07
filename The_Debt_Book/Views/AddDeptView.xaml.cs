@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace The_Debt_Book.Views
 {
 	/// <summary>
-	/// Interaction logic for HomeView.xaml
+	/// Interaction logic for AccountView.xaml
 	/// </summary>
-	public partial class HomeView : UserControl
+	public partial class AddDeptView : UserControl
 	{
-		public HomeView()
+		public AddDeptView()
 		{
 			InitializeComponent();
 		}
