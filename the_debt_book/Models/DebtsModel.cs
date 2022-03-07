@@ -12,5 +12,7 @@ namespace the_debt_book.Models
 
         public int DebtsValue { get; set; }
 
+
+        public DebtsModel() { }
     }
 }

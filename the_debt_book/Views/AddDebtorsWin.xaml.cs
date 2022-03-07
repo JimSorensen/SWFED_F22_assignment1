@@ -11,22 +11,20 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using the_debt_book.ViewModels;
 
 namespace the_debt_book.Views
 {
-	/// <summary>
-	/// Interaction logic for AddDebtorsWin.xaml
-	/// </summary>
-	public partial class AddDebtorsWin : Window
-	{
-		public AddDebtorsWin()
-		{
-			InitializeComponent();
-		}
+    /// <summary>
+    /// Interaction logic for AddDebtorsWin.xaml
+    /// </summary>
+    public partial class AddDebtorsWin : Window
+    {
+        public AddDebtorsWin()
+        {
+            InitializeComponent();
+            DataContext = new AddDebtorsViewModel();
+        }
 
-		private void CancelBtnClick(object sender, RoutedEventArgs e)
-		{
-			DialogResult = false;
-		}
-	}
+    }
 }

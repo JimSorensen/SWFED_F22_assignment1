@@ -3,9 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:the_debt_book.Views"
+        xmlns:local="clr-namespace:the_debt_book.Views" xmlns:local1="clr-namespace:the_debt_book.ViewModels"
         mc:Ignorable="d"
-        Title="AddDebtorsWin" Height="260" Width="250">
+        Title="AddDebtorsWin" Height="260" Width="250"
+        DataContext="{StaticResource AddDebtorsViewModel}"
+        >
+
     <Window.Resources>
         <Style TargetType="{x:Type TextBox}">
             <Setter Property="FontSize" Value="18"/>
@@ -40,23 +43,25 @@
                    Text="Add Debtor"
                    Margin="0,0,0,0"/>
 
-        <TextBox Text="Name"
+        <TextBox Text="{Binding Path=FullName, StringFormat=F1}" 
                  Grid.Row="1"/>
 
-		<TextBox Text="Initial Value" 
+
+        <TextBox Text="{Binding Path=InitialValue, StringFormat=F1}" 
                  Grid.Row="2"/>
 
 		<Button Grid.Row="3" 
                 HorizontalAlignment="Left"
-                Name="saveButton">
-			    Save
+                Command="{Binding AddDebtorCommand, Mode=OneTime}"
+                Content="Save">
+
 		</Button>
 
 		<Button Grid.Row="3"
                 HorizontalAlignment="Right"
                 Name="cancelButton" 
                 IsEnabled="True"
-                Click="CancelBtnClick">
+                >
 			    Cancel
 		</Button>
 

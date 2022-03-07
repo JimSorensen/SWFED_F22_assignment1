@@ -1,9 +1,9 @@
 ﻿<Application x:Class="the_debt_book.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:the_debt_book"
+             xmlns:local="clr-namespace:the_debt_book" xmlns:local1="clr-namespace:the_debt_book.ViewModels"
              StartupUri="Views/mainWindow.xaml">
     <Application.Resources>
-         
+        <local1:AddDebtorsViewModel x:Key="AddDebtorsViewModel" />
     </Application.Resources>
 </Application>
