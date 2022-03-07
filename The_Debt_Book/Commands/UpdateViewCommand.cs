@@ -34,6 +34,10 @@ namespace The_Debt_Book.Commands
             {
                 viewModel.SelectedViewModel = new AddDeptViewModel();
             }
+            else if (parameter.ToString() == "MainWindow")
+            {
+                viewModel.SelectedViewModel = new AddDeptViewModel();
+            }
         }
     }
 }

@@ -24,7 +24,7 @@
 		<TextBox HorizontalAlignment="Left" Margin="25,0,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Center" Width="305" FontSize="20" FontStyle="Italic" Grid.Row="1" Grid.ColumnSpan="2"/>
 		<TextBox HorizontalAlignment="Left" Margin="25,10,0,0" TextWrapping="Wrap" Text="Initial Value" VerticalAlignment="Top" Width="305" FontSize="20" FontStyle="Italic" Grid.Row="2" Grid.ColumnSpan="2"/>
 		<Button Content="Save" HorizontalAlignment="Left" Margin="25,25,0,0" VerticalAlignment="Top" Width="137" Height="45" FontWeight="Bold" FontSize="22" FontStyle="Italic" Grid.Row="3"/>
-		<Button x:Name="btn_cancel" Content="Cancel" HorizontalAlignment="Left" Margin="18,25,0,0" VerticalAlignment="Top" Width="137" Height="45" FontSize="22" FontWeight="Bold" FontStyle="Italic" Grid.Row="3" Grid.Column="1" Click="Cancel"/>
+		<Button x:Name="btn_cancel" Command="{Binding UpdateViewCommand}" CommandParameter="MainWindow" Content="Cancel" HorizontalAlignment="Left" Margin="18,25,0,0" VerticalAlignment="Top" Width="137" Height="45" FontSize="22" FontWeight="Bold" FontStyle="Italic" Grid.Row="3" Grid.Column="1" Click="CancelBtn"/>
 
 	</Grid>
 </UserControl>

@@ -13,5 +13,6 @@
 		<DataTemplate DataType="{x:Type viewmodels:AddDeptViewModel}">
 			<views:AddDeptView/>
 		</DataTemplate>
+		
 	</Application.Resources>
 </Application>
