@@ -13,11 +13,11 @@
 		</Grid.RowDefinitions>
 
 		<ContentControl>
-			<ListBox  Margin="0,0,380,0"/>
+			<ListBox  Margin="20,59,340,0"/>
 		</ContentControl>
 
 		<StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-			<Button FontSize="36" Margin="30" Width="400" Content="Add Debter" Command="{Binding UpdateViewCommand}" CommandParameter="AddDepter" FontWeight="Bold"/>
+			<Button FontSize="36" Margin="30" Width="660" Content="Add Debter" Command="{Binding UpdateViewCommand}" CommandParameter="AddDepter" FontWeight="Bold"/>
 		</StackPanel>
 	</Grid>
 </Window>
