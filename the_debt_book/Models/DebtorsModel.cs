@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ namespace the_debt_book.Models
     {
 
         public String FullName { get; set; }
-        public List<DebtsModel> Debts { get; set; }
+        public ObservableCollection<DebtsModel> Debts { get; set; }
 
         public int SumOfDebts
         {

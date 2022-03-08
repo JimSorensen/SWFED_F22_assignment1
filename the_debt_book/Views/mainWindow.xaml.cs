@@ -23,14 +23,7 @@ namespace the_debt_book.Views
         public mainWindow()
         {
             InitializeComponent();
-            DataContext = new AddDebtorsViewModel();
         }
 
-        private void AddButton_Click(object sender, RoutedEventArgs e)
-        {
-            AddDebtorsWin addDebtorsWin = new AddDebtorsWin();
-
-            addDebtorsWin.Show();
-        }
     }
 }

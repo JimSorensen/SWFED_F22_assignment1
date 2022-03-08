@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:the_debt_book.Views" xmlns:local1="clr-namespace:the_debt_book.ViewModels"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
         Title="mainWindow" Height="450" Width="569"
         DataContext="{StaticResource AddDebtorsViewModel}">
@@ -24,9 +25,16 @@
                Grid.Column="0"
                Grid.ColumnSpan="2"/>
         <ListBox ItemsSource="{Binding Path=Debtors}" 
+                 SelectedItem="{Binding Path=Debtor}"
                   Grid.Row="1"
+                 Grid.RowSpan="4"
                   Grid.Column="0"
                   Margin="0,0,0,0">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseDoubleClick">
+                    <i:InvokeCommandAction Command="{Binding UpdateDebtsCommand}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock>
@@ -46,7 +54,12 @@
                 Height="80"
                 Grid.Row="1"
                 Grid.Column="1"
-                FontWeight="Bold" FontSize="18" Click="AddButton_Click"/>
+                FontWeight="Bold" FontSize="18"
+                Command="{Binding AddDebtorCommand}"
+                />
 
     </Grid>
+
+   
+
 </Window>

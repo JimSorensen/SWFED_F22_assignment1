@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace the_debt_book.Views
 {
     /// <summary>
-    /// Interaction logic for AddDebts.xaml
+    /// Interaction logic for AddDebtsWin.xaml
     /// </summary>
-    public partial class AddDebts : Window
+    public partial class AddDebtsWin : Window
     {
-        public AddDebts()
+        public AddDebtsWin()
         {
             InitializeComponent();
         }

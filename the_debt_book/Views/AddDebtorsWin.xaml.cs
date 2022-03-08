@@ -23,8 +23,8 @@ namespace the_debt_book.Views
         public AddDebtorsWin()
         {
             InitializeComponent();
-            DataContext = new AddDebtorsViewModel();
         }
+
 
     }
 }

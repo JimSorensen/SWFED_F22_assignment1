@@ -8,7 +8,9 @@ namespace the_debt_book.Models
 {
     public class DebtsModel
     {
-        public DateTime LogTime { get; set; }
+
+        // could be DateTime..
+        public String LogTime { get; set; }
 
         public int DebtsValue { get; set; }
 
