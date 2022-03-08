@@ -17,9 +17,16 @@
             <Setter Property="Height" Value="30"/>
             <Setter Property="TextAlignment" Value="Center"/>
         </Style>
-        <Style TargetType="{x:Type TextBlock}">
+        <Style TargetType="{x:Type Label}">
             <Setter Property="FontSize" Value="30"/>
             <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="IsHitTestVisible" Value="False"/>
+            <Setter Property="Foreground" Value="DarkGray"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
         <Style TargetType="{x:Type Button}">
             <Setter Property="Margin" Value="20,0,20,20"/>
@@ -36,37 +43,45 @@
             <RowDefinition Height="90" />
         </Grid.RowDefinitions>
 
-        <TextBlock 
+        <Label 
                    Grid.Row="0" 
                    HorizontalAlignment="Center" 
-                   VerticalAlignment="Center"
-                   Text="Add Debtor"
-                   Margin="0,0,0,0"/>
+                   VerticalAlignment="Center">
+                   Add Debtor
+        </Label>
 
         <TextBox Text="{Binding Path=Debtor.FullName, Mode=OneWayToSource}" 
-                 Grid.Row="1" Margin="0,12,0,13" Width="205"/>
+                 Grid.Row="1" 
+                 Margin="0,12,0,13" 
+                 Width="205"
+                 x:Name="FullName"/>
+        <TextBlock Text="Name"
+                   Grid.Row="1">
+        </TextBlock>
 
         <TextBox Text="{Binding Path=Debt.DebtsValue, Mode=OneWayToSource}" 
-                 Grid.Row="2" Margin="0,13,0,12" Width="205"/>
+                 Grid.Row="2" 
+                 Margin="0,13,0,12" 
+                 Width="205"
+                 x:Name="Debts"/>
+        <TextBlock Text="DebtsValue"
+                   Grid.Row="2">
+        </TextBlock>
 
-		<Button Grid.Row="3" 
+        <Button Grid.Row="3" 
                 HorizontalAlignment="Left"
                 Command="{Binding SaveDebtorCommand, Mode=OneTime}"
                 Content="Save" Margin="15"
-                >
+                />
 
-		</Button>
 
-		<Button Grid.Row="3"
+        <Button Grid.Row="3"
                 HorizontalAlignment="Right"
                 Name="cancelButton" 
                 IsEnabled="True"
                 Content="Cancel"
                 Command="{Binding CloseCommand, Mode=OneTime}"
 				Margin="15"
-                >
-
-		</Button>
-
-	</Grid>
+                />
+    </Grid>
 </Window>
