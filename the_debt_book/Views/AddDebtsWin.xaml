@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:the_debt_book.Views"
         mc:Ignorable="d"
-        Title="AddDebts" Height="250" Width="300">
+        Title="AddDebts" Height="259" Width="300">
     <Window.Resources>
         <Style TargetType="{x:Type TextBox}">
             <Setter Property="FontSize" Value="20"/>

@@ -81,8 +81,6 @@ namespace the_debt_book.ViewModels
                 Debts = debtsList3
 
             });
-
-
         }
 
         public DebtsModel Debt

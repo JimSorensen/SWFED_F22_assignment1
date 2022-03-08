@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:the_debt_book.Views" xmlns:local1="clr-namespace:the_debt_book.ViewModels"
         mc:Ignorable="d"
-        Title="AddDebtorsWin" Height="260" Width="250"
+        Title="AddDebtorsWin" Height="300" Width="250"
         DataContext="{StaticResource MainViewModel}"
         >
 
@@ -28,7 +28,7 @@
             <Setter Property="Height" Value="35"/>
         </Style>
     </Window.Resources>
-    <Grid>
+    <Grid Margin="10,10,5,10">
         <Grid.RowDefinitions>
             <RowDefinition Height="60" />
             <RowDefinition Height="55" />
@@ -44,15 +44,15 @@
                    Margin="0,0,0,0"/>
 
         <TextBox Text="{Binding Path=Debtor.FullName, Mode=OneWayToSource}" 
-                 Grid.Row="1"/>
+                 Grid.Row="1" Margin="0,12,0,13" Width="205"/>
 
         <TextBox Text="{Binding Path=Debt.DebtsValue, Mode=OneWayToSource}" 
-                 Grid.Row="2"/>
+                 Grid.Row="2" Margin="0,13,0,12" Width="205"/>
 
 		<Button Grid.Row="3" 
                 HorizontalAlignment="Left"
                 Command="{Binding SaveDebtorCommand, Mode=OneTime}"
-                Content="Save"
+                Content="Save" Margin="15"
                 >
 
 		</Button>
@@ -63,6 +63,7 @@
                 IsEnabled="True"
                 Content="Cancel"
                 Command="{Binding CloseCommand, Mode=OneTime}"
+				Margin="15"
                 >
 
 		</Button>
