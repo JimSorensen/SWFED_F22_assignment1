@@ -12,12 +12,10 @@
 			<RowDefinition Height="auto"/>
 		</Grid.RowDefinitions>
 
-		<ContentControl>
-			<ListBox  Margin="20,59,340,0"/>
-		</ContentControl>
+		<ContentControl Content="{Binding SelectedViewModel}"/>
 
 		<StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-			<Button FontSize="36" Margin="30" Width="660" Content="Add Debter" Command="{Binding UpdateViewCommand}" CommandParameter="AddDepter" FontWeight="Bold"/>
+			<Button FontSize="36" Margin="30" Width="400" Content="Add Debter" Command="{Binding UpdateViewCommand}" CommandParameter="AddDebters" FontWeight="Bold"/>
 		</StackPanel>
 	</Grid>
 </Window>

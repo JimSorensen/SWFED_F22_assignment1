@@ -26,12 +26,5 @@ namespace The_Debt_Book.Views
 			InitializeComponent();
 		}
 
-		private void CancelBtn(object sender, RoutedEventArgs e)
-		{
-		
-			MainWindow mainWindow = new MainWindow();
-			this.Visibility = Visibility.Hidden;
-			mainWindow.Show();
-		}
 	}
 }
