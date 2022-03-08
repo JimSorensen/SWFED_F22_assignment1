@@ -17,7 +17,7 @@ namespace The_Debt_Book.ViewModels
 		public DepterViewModel()
 		{
 			this.Depters = new ObservableCollection<Depter>();
-			PopulateStaticData();
+			//PopulateStaticData();
 		}
 	}
 }
