@@ -53,7 +53,8 @@
         <ListBox ItemsSource="{Binding Path=Debts}" 
                   Grid.Row="0"
                   Grid.Column="0"
-                  Margin="15">
+                  Margin="15"				 
+				 BorderThickness="2">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock>

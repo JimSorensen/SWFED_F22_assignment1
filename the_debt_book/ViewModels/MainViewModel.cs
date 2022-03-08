@@ -20,13 +20,10 @@ namespace the_debt_book.ViewModels
     // https://prismlibrary.com/docs/wpf/legacy/Implementing-MVVM.html
     internal class MainViewModel : BindableBase
     {
-
-
         ObservableCollection<DebtorsModel> debtors = new ObservableCollection<DebtorsModel>();
         DebtsModel debtsModel = new DebtsModel();
         ObservableCollection<DebtsModel> debts = new ObservableCollection<DebtsModel>();
         DebtorsModel debtorsModel = new DebtorsModel();
-
 
         // Constructor Initialize components => might go into Data-repository
         public MainViewModel()
@@ -51,7 +48,6 @@ namespace the_debt_book.ViewModels
                 LogTime = DateTime.UtcNow.ToShortTimeString()
             });
 
-
             ObservableCollection<DebtsModel> debtsList3 = new ObservableCollection<DebtsModel>();
             debtsList3.Add(new DebtsModel()
             {
@@ -71,15 +67,12 @@ namespace the_debt_book.ViewModels
             {
                 FullName = "Jim",
                 Debts = debtsList2
-
             });
-
 
             debtors.Add(new DebtorsModel()
             {
                 FullName = "Maagisha",
                 Debts = debtsList3
-
             });
         }
 
@@ -95,9 +88,7 @@ namespace the_debt_book.ViewModels
         public string SumOfDebts
         {
             get { return debtorsModel.SumOfDebts.ToString(); }
-
         }
-
 
         public ObservableCollection<DebtorsModel> Debtors
         {
@@ -108,15 +99,11 @@ namespace the_debt_book.ViewModels
             }
         }
 
-
         public DebtorsModel Debtor
         {
             get { return debtorsModel; }
             set { SetProperty(ref debtorsModel, value); }
-
         }
-
-
 
         public ObservableCollection<DebtsModel> Debts
         {
@@ -127,16 +114,12 @@ namespace the_debt_book.ViewModels
             }
         }
 
-
-
         #region Commands
-
         Window window;
         DelegateCommand _saveDebtorCommand;
         DelegateCommand _addDebtorCommand;
         DelegateCommand _updateDebtsCommand;
         DelegateCommand _closeCommand;
-
 
         /// <summary>
         /// this method saves a Debtor.
@@ -147,10 +130,7 @@ namespace the_debt_book.ViewModels
             {
                 return _saveDebtorCommand ?? (_saveDebtorCommand = new DelegateCommand(SaveDebtor, SaveDebtorCanExecute)); // can always execute. Maybe if the list is somewhat full?!
             }
-
         }
-
-
 
         /// <summary>
         /// the logic. It adds a debtor, to the debtor list. This includes adding a debts lists, 

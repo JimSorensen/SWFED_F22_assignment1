@@ -28,6 +28,5 @@ namespace the_debt_book.Models
             }
             return totalAccumulatedDebt;
         }
-
     }
 }
