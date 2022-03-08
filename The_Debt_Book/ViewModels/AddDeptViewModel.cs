@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace The_Debt_Book.ViewModels
 {
-	public class AddDeptViewModel : BaseViewModel
+	public class AddDepterViewModel : BaseViewModel
 	{
 	}
 }

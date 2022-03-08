@@ -26,5 +26,12 @@ namespace The_Debt_Book.Views
 			InitializeComponent();
 		}
 
+		private void Cancel(object sender, RoutedEventArgs e)
+		{
+
+			MainWindow mainWindow = new();
+			this.Content = mainWindow;
+			mainWindow.Show();
+		}
 	}
 }

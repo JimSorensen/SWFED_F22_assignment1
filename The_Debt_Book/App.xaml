@@ -5,14 +5,13 @@
 			 xmlns:views="clr-namespace:The_Debt_Book.Views"
              xmlns:viewmodels="clr-namespace:The_Debt_Book.ViewModels"
              StartupUri="MainWindow.xaml">
-    <Application.Resources>
-		
+	<Application.Resources>
+
 		<DataTemplate DataType="{x:Type viewmodels:AddDepterViewModel}">
 			<views:AddDepterView/>
 		</DataTemplate>
 		<DataTemplate DataType="{x:Type viewmodels:AddDeptViewModel}">
 			<views:AddDeptView/>
 		</DataTemplate>
-		
 	</Application.Resources>
 </Application>
