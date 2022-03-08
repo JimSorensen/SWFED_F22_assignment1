@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:the_debt_book" xmlns:local1="clr-namespace:the_debt_book.ViewModels"
              StartupUri="Views/mainWindow.xaml">
     <Application.Resources>
-        <local1:AddDebtorsViewModel x:Key="AddDebtorsViewModel" />
+        <local1:MainViewModel x:Key="MainViewModel" />
     </Application.Resources>
 </Application>

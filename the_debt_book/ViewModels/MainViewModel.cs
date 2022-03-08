@@ -18,7 +18,7 @@ namespace the_debt_book.ViewModels
 
     // BindableBase in Prism implements the InotifyPropertyChanged interfacein a type-safe manner.
     // https://prismlibrary.com/docs/wpf/legacy/Implementing-MVVM.html
-    internal class AddDebtorsViewModel : BindableBase
+    internal class MainViewModel : BindableBase
     {
 
 
@@ -29,7 +29,7 @@ namespace the_debt_book.ViewModels
 
 
         // Constructor Initialize components => might go into Data-repository
-        public AddDebtorsViewModel()
+        public MainViewModel()
         {
             ObservableCollection<DebtsModel> debtsList1 = new ObservableCollection<DebtsModel>();
             debtsList1.Add(new DebtsModel()
@@ -94,15 +94,11 @@ namespace the_debt_book.ViewModels
             }
         }
 
-
-
         public string SumOfDebts
         {
             get { return debtorsModel.SumOfDebts.ToString(); }
 
         }
-
-
 
 
         public ObservableCollection<DebtorsModel> Debtors

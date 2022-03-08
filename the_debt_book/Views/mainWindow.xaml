@@ -7,7 +7,7 @@
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
         Title="mainWindow" Height="450" Width="569"
-        DataContext="{StaticResource AddDebtorsViewModel}">
+        DataContext="{StaticResource MainViewModel}">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
