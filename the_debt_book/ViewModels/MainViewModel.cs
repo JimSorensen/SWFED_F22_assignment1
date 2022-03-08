@@ -116,6 +116,13 @@ namespace the_debt_book.ViewModels
 
         }
 
+        int debtorIndex = -1;
+
+        public int DebtorIndex
+        {
+            get { return debtorIndex; }
+            set { SetProperty(ref debtorIndex, value); }
+        }
 
 
         public ObservableCollection<DebtsModel> Debts
@@ -171,9 +178,9 @@ namespace the_debt_book.ViewModels
                 FullName = debtorsModel.FullName,
                 Debts = debtsList
             };
-
-
+            DebtorIndex = Debtors.Count - 1;
             Debtors.Add(debtor);
+            MessageBox.Show("New Debtor added" + "\n" + "Name: " + debtor.FullName + "\n" + "Debtsvalue: " + debtsModel.DebtsValue);
             window.Close();
         }
 
