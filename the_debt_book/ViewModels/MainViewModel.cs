@@ -23,7 +23,7 @@ namespace the_debt_book.ViewModels
         ObservableCollection<DebtorsModel> debtors = new ObservableCollection<DebtorsModel>();
         DebtsModel debtsModel = new DebtsModel();
         ObservableCollection<DebtsModel> debts = new ObservableCollection<DebtsModel>();
-        DebtorsModel debtorsModel = new DebtorsModel();
+        DebtorsModel debtorsModel = new DebtorsModel();        
 
         // Constructor Initialize components => might go into Data-repository
         public MainViewModel()
@@ -130,6 +130,8 @@ namespace the_debt_book.ViewModels
         DelegateCommand _updateDebtsCommand;
         DelegateCommand _closeCommand;
 
+        DelegateCommand _AddNewDebtToExistingUserCommand;
+
         /// <summary>
         /// this method saves a Debtor.
         /// </summary>
@@ -138,6 +140,14 @@ namespace the_debt_book.ViewModels
             get
             {
                 return _saveDebtorCommand ?? (_saveDebtorCommand = new DelegateCommand(SaveDebtor, SaveDebtorCanExecute)); // can always execute. Maybe if the list is somewhat full?!
+            }
+        }
+
+        public DelegateCommand AddNewDebtToExistingUserCommand
+        {
+            get
+            {
+                return _saveDebtorCommand ?? (_saveDebtorCommand = new DelegateCommand(AddNewDebt, () => true)); // can always execute. Maybe if the list is somewhat full?!
             }
         }
 
@@ -161,8 +171,21 @@ namespace the_debt_book.ViewModels
                 Debts = debtsList
             };
             DebtorIndex = Debtors.Count - 1;
-            Debtors.Add(debtor);
             MessageBox.Show("New Debtor added" + "\n" + "Name: " + debtor.FullName + "\n" + "Debtsvalue: " + debtsModel.DebtsValue);
+            window.Close();
+        }
+
+
+        public void AddNewDebt()
+        {
+            var NewDebt = new DebtsModel() {
+                LogTime = DateTime.UtcNow.ToShortTimeString(),
+                DebtsValue = debtsModel.DebtsValue
+            };
+
+            Debtors.Where(x => x.FullName == Debtor.FullName).SingleOrDefault().Debts.Add(NewDebt);
+
+            MessageBox.Show("New Debt added" + "\n" + "Name: " + debtorsModel.FullName + "\n" + "Debtsvalue: " + debtsModel.DebtsValue);
             window.Close();
         }
 
@@ -223,7 +246,6 @@ namespace the_debt_book.ViewModels
 
         public void UpdateDebts()
         {
-
             window = new AddDebtsWin();
             window.DataContext = this;
             window.Show();
@@ -251,7 +273,11 @@ namespace the_debt_book.ViewModels
         }
 
 
-
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void Notify([CallerMemberName] string propName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
+        }
 
         #endregion
 

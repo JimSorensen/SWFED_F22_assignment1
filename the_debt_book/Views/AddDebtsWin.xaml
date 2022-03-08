@@ -30,16 +30,18 @@
             <ColumnDefinition Width="140" />
         </Grid.ColumnDefinitions>
         
-        <TextBox Grid.Row="0" 
-                 Grid.Column="1" 
-                 Text="Value" 
+        <TextBox 
+			     Text="{Binding Path=Debt.DebtsValue, Mode=OneWayToSource}"
+			     Grid.Row="0" 
+                 Grid.Column="1"  
                  HorizontalAlignment="Center" 
                  Margin="0,0,0,90"
                  TextAlignment="Center"/>
         
         <Button
-                Grid.Column="1">
-                Add Value
+                Grid.Column="1"
+			    Command="{Binding AddNewDebtToExistingUserCommand, Mode=OneTime}"
+			    Content="Add Value" Margin="15">
         </Button>
         
         <Button Grid.Row="1"

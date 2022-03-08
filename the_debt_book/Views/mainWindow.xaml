@@ -23,10 +23,11 @@
                FontSize="22" FontWeight="Bold"
                Grid.Row="0"
                Grid.Column="0"/>
-		<ListBox ItemsSource="{Binding Path=Debtors}" 
+		<ListBox
+				ItemsSource="{Binding Path=Debtors}" 
                  SelectedItem="{Binding Path=Debtor}"
                   Grid.Row="1"
-                  Grid.Column="0"
+                   Grid.Column="0"
                   Margin="15,0,1,10">
 			<i:Interaction.Triggers>
 				<i:EventTrigger EventName="MouseDoubleClick">

@@ -22,6 +22,6 @@ namespace the_debt_book.Views
         public AddDebtsWin()
         {
             InitializeComponent();
-        }
-    }
+        }		
+	}
 }
