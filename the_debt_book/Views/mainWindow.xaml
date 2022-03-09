@@ -35,31 +35,31 @@
                FontSize="22" FontWeight="Bold"
                Grid.Row="1"
                Grid.Column="0"/>
-		<ListBox
+            <ListBox
 				ItemsSource="{Binding Path=Debtors}" 
                  SelectedItem="{Binding Path=Debtor}"
                   Grid.Row="2"
                    Grid.Column="0"
                   Margin="15,0,1,10">
-			<i:Interaction.Triggers>
-				<i:EventTrigger EventName="MouseDoubleClick">
-					<i:InvokeCommandAction Command="{Binding UpdateDebtsCommand}"/>
-				</i:EventTrigger>
-			</i:Interaction.Triggers>
-			<ListBox.ItemTemplate>
-				<DataTemplate>
-					<TextBlock>
-						<TextBlock.Text>
-							<MultiBinding StringFormat="{}{0}   {1}">
-								<Binding Path="FullName" />
-								<Binding Path="SumOfDebts" />
-							</MultiBinding>
-						</TextBlock.Text>
-					</TextBlock>
-				</DataTemplate>
-			</ListBox.ItemTemplate>
-		</ListBox>
-		<Button Content="ADD" 
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="MouseDoubleClick">
+                        <i:InvokeCommandAction Command="{Binding UpdateDebtsCommand}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock>
+                            <TextBlock.Text>
+                                <MultiBinding StringFormat="{}{0}   {1}">
+                                    <Binding Path="FullName" />
+                                    <Binding Path="SumOfDebts" />
+                                </MultiBinding>
+                            </TextBlock.Text>
+                        </TextBlock>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <Button Content="ADD" 
                 IsEnabled="True"
                 Width="110"
                 Height="80"
@@ -69,7 +69,8 @@
                 Command="{Binding AddDebtorCommand}"
                 />
 
-	</Grid>
+        </Grid>
+    </DockPanel>
 
 
 
