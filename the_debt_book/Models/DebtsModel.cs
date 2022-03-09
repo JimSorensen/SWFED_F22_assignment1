@@ -10,7 +10,7 @@ namespace the_debt_book.Models
     {
 
         // could be DateTime..
-        public String LogTime { get; set; }
+        public String? LogTime { get; set; }
 
         public int DebtsValue { get; set; }
 

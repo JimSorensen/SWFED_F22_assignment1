@@ -8,26 +8,26 @@
         mc:Ignorable="d"
         Title="mainWindow" Height="450" Width="569"
         DataContext="{StaticResource MainViewModel}">
-	<Grid>
-		<Grid.RowDefinitions>
+    <Grid>
+        <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
-			<RowDefinition Height="60"/>
-			<RowDefinition Height="*"/>
-		</Grid.RowDefinitions>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="*"/>
-			<ColumnDefinition Width="*"/>
-		</Grid.ColumnDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
         <Menu
              Grid.Row="0"
              Grid.ColumnSpan="2"
             >
             <MenuItem Header="_File" >
-                <MenuItem Header="S_ave" Command="{Binding CloseAppCommand}"/>
+                <MenuItem Header="S_ave" Command="{Binding SaveAppCommand}"/>
                 <MenuItem Header="L_oad" Command="{Binding CloseAppCommand}"/>
                 <MenuItem Header="E_xit" Command="{Binding CloseAppCommand}"/>
             </MenuItem>
-            
+
         </Menu>
 
         <Label Content="Debters" 
@@ -35,31 +35,31 @@
                FontSize="22" FontWeight="Bold"
                Grid.Row="1"
                Grid.Column="0"/>
-            <ListBox
+        <ListBox
 				ItemsSource="{Binding Path=Debtors}" 
                  SelectedItem="{Binding Path=Debtor}"
                   Grid.Row="2"
                    Grid.Column="0"
                   Margin="15,0,1,10">
-                <i:Interaction.Triggers>
-                    <i:EventTrigger EventName="MouseDoubleClick">
-                        <i:InvokeCommandAction Command="{Binding UpdateDebtsCommand}"/>
-                    </i:EventTrigger>
-                </i:Interaction.Triggers>
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock>
-                            <TextBlock.Text>
-                                <MultiBinding StringFormat="{}{0}   {1}">
-                                    <Binding Path="FullName" />
-                                    <Binding Path="SumOfDebts" />
-                                </MultiBinding>
-                            </TextBlock.Text>
-                        </TextBlock>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-            <Button Content="ADD" 
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseDoubleClick">
+                    <i:InvokeCommandAction Command="{Binding UpdateDebtsCommand}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock>
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat="{}{0}   {1}">
+                                <Binding Path="FullName" />
+                                <Binding Path="SumOfDebts" />
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Content="ADD" 
                 IsEnabled="True"
                 Width="110"
                 Height="80"
@@ -69,9 +69,5 @@
                 Command="{Binding AddDebtorCommand}"
                 />
 
-        </Grid>
-    </DockPanel>
-
-
-
+    </Grid>
 </Window>
