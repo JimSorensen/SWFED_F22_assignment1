@@ -10,6 +10,7 @@
         DataContext="{StaticResource MainViewModel}">
 	<Grid>
 		<Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
 			<RowDefinition Height="60"/>
 			<RowDefinition Height="*"/>
 		</Grid.RowDefinitions>
@@ -17,16 +18,27 @@
 			<ColumnDefinition Width="*"/>
 			<ColumnDefinition Width="*"/>
 		</Grid.ColumnDefinitions>
+        <Menu
+             Grid.Row="0"
+             Grid.ColumnSpan="2"
+            >
+            <MenuItem Header="_File" >
+                <MenuItem Header="S_ave" Command="{Binding CloseAppCommand}"/>
+                <MenuItem Header="L_oad" Command="{Binding CloseAppCommand}"/>
+                <MenuItem Header="E_xit" Command="{Binding CloseAppCommand}"/>
+            </MenuItem>
+            
+        </Menu>
 
-		<Label Content="Debters" 
-               Margin="15,19,165,5" 
+        <Label Content="Debters" 
+               Margin="15,0,165,5" 
                FontSize="22" FontWeight="Bold"
-               Grid.Row="0"
+               Grid.Row="1"
                Grid.Column="0"/>
 		<ListBox
 				ItemsSource="{Binding Path=Debtors}" 
                  SelectedItem="{Binding Path=Debtor}"
-                  Grid.Row="1"
+                  Grid.Row="2"
                    Grid.Column="0"
                   Margin="15,0,1,10">
 			<i:Interaction.Triggers>
@@ -51,7 +63,7 @@
                 IsEnabled="True"
                 Width="110"
                 Height="80"
-                Grid.Row="1"
+                Grid.Row="2"
                 Grid.Column="1"
                 FontWeight="Bold" FontSize="18"
                 Command="{Binding AddDebtorCommand}"

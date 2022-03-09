@@ -23,11 +23,12 @@ namespace the_debt_book.ViewModels
         ObservableCollection<DebtorsModel> debtors = new ObservableCollection<DebtorsModel>();
         DebtsModel debtsModel = new DebtsModel();
         ObservableCollection<DebtsModel> debts = new ObservableCollection<DebtsModel>();
-        DebtorsModel debtorsModel = new DebtorsModel();        
+        DebtorsModel debtorsModel = new DebtorsModel();
 
         // Constructor Initialize components => might go into Data-repository
         public MainViewModel()
         {
+
             ObservableCollection<DebtsModel> debtsList1 = new ObservableCollection<DebtsModel>();
             debtsList1.Add(new DebtsModel()
             {
@@ -123,12 +124,21 @@ namespace the_debt_book.ViewModels
             }
         }
 
+
+        public string FullName
+        {
+            get { return debtorsModel.FullName; }
+        }
+
+
+
         #region Commands
         Window window;
         DelegateCommand _saveDebtorCommand;
         DelegateCommand _addDebtorCommand;
         DelegateCommand _updateDebtsCommand;
         DelegateCommand _closeCommand;
+        DelegateCommand? _closeAppCommand;
 
         DelegateCommand _AddNewDebtToExistingUserCommand;
 
@@ -167,7 +177,7 @@ namespace the_debt_book.ViewModels
 
             DebtorsModel debtor = new DebtorsModel()
             {
-                FullName = debtorsModel.FullName,
+                FullName = FullName,
                 Debts = debtsList
             };
             DebtorIndex = Debtors.Count - 1;
@@ -271,6 +281,19 @@ namespace the_debt_book.ViewModels
 
             window.Close();
         }
+
+        
+        public DelegateCommand CloseAppCommand =>
+            _closeAppCommand ?? (_closeAppCommand = new DelegateCommand(ExecuteCloseAppCommand));
+
+        void ExecuteCloseAppCommand()
+        {
+            Application.Current.MainWindow.Close();
+        }
+
+
+
+
 
 
         public event PropertyChangedEventHandler PropertyChanged;
