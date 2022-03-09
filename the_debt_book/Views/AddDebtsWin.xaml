@@ -40,7 +40,7 @@
         
         <Button
                 Grid.Column="1"
-			    Command="{Binding AddNewDebtToExistingUserCommand, Mode=OneTime}"
+			    Command="{Binding AddValueCommand, Mode=OneTime}"
 			    Content="Add Value" Margin="15">
         </Button>
         

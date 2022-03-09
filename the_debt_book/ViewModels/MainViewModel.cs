@@ -129,6 +129,7 @@ namespace the_debt_book.ViewModels
         DelegateCommand _addDebtorCommand;
         DelegateCommand _updateDebtsCommand;
         DelegateCommand _closeCommand;
+        DelegateCommand _addValueCommand;
 
         DelegateCommand _AddNewDebtToExistingUserCommand;
 
@@ -252,7 +253,18 @@ namespace the_debt_book.ViewModels
 
         }
 
+        public DelegateCommand AddValueCommand
+        {
+            get 
+            {
+                return _addValueCommand ?? (_addValueCommand = new DelegateCommand(AddValue));
+            }
+        }
 
+        public void AddValue()
+        {
+            AddNewDebt();
+        }
 
         /// <summary>
         /// This method closes the window currently open.
