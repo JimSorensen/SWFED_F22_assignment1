@@ -69,7 +69,7 @@
 				</DataTemplate>
 			</ListBox.ItemTemplate>
 		</ListBox>
-		<Label Content="Tryk på tab for at validere værdien" HorizontalAlignment="Left" Margin="15,47,0,0" Grid.Row="1" VerticalAlignment="Top" Width="205" FontSize="10" Grid.ColumnSpan="2" Height="23"/>
+		<Label Content="Tryk på tab for at validere værdien, så AddValue-knappen aktiveres" HorizontalAlignment="Left" Margin="15,47,0,0" Grid.Row="1" VerticalAlignment="Top" Width="275" FontSize="9" Grid.ColumnSpan="2" Height="23"/>
 
 
 

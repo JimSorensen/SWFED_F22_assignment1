@@ -105,6 +105,6 @@
                 Command="{Binding CloseCommand, Mode=OneTime}"
 				Margin="15"
                 />
-		<Label Content="Tryk på tab for at validere værdien" HorizontalAlignment="Center" Margin="0,62,0,0" Grid.Row="3" VerticalAlignment="Top" Width="205" FontSize="10"/>
+        <Label Content="Tryk på tab for at validere værdien, så save-knappen aktiveres" HorizontalAlignment="Center" Margin="0,62,0,0" Grid.Row="3" VerticalAlignment="Top" Width="275" FontSize="9"/>
 	</Grid>
 </Window>
