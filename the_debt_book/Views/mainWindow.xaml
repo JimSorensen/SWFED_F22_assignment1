@@ -8,6 +8,18 @@
         mc:Ignorable="d"
         Title="mainWindow" Height="450" Width="569"
         DataContext="{StaticResource MainViewModel}">
+    <Window.Resources>
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Height" Value="80"/>
+            <Setter Property="Width" Value="110"/>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
@@ -19,27 +31,23 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Menu
-             Grid.Row="0"
              Grid.ColumnSpan="2"
             >
             <MenuItem Header="_File" >
                 <MenuItem Header="S_ave" Command="{Binding SaveAppCommand}"/>
-                <MenuItem Header="L_oad" Command="{Binding CloseAppCommand}"/>
+                <MenuItem Header="L_oad" Command="{Binding OpenFileCommand}"/>
                 <MenuItem Header="E_xit" Command="{Binding CloseAppCommand}"/>
             </MenuItem>
 
         </Menu>
 
-        <Label Content="Debters" 
-               Margin="15,0,165,5" 
-               FontSize="22" FontWeight="Bold"
-               Grid.Row="1"
-               Grid.Column="0"/>
+        <Label Content="Debtors" 
+               Margin="15,0,165,5"
+               Grid.Row="1"/>
         <ListBox
 				ItemsSource="{Binding Path=Debtors}" 
                  SelectedItem="{Binding Path=Debtor}"
                   Grid.Row="2"
-                   Grid.Column="0"
                   Margin="15,0,1,10">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="MouseDoubleClick">
@@ -61,11 +69,8 @@
         </ListBox>
         <Button Content="ADD" 
                 IsEnabled="True"
-                Width="110"
-                Height="80"
                 Grid.Row="2"
                 Grid.Column="1"
-                FontWeight="Bold" FontSize="18"
                 Command="{Binding AddDebtorCommand}"
                 />
 
