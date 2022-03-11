@@ -5,71 +5,73 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:the_debt_book.Views"
         mc:Ignorable="d"
-        Title="AddDebts" Height="259" Width="300">
-    <Window.Resources>
-        <Style TargetType="{x:Type TextBox}">
-            <Setter Property="FontSize" Value="20"/>
-            <Setter Property="FontFamily" Value="Segoe UI"/>
-            <Setter Property="Width" Value="90"/>
-            <Setter Property="Height" Value="35"/>
-            <Setter Property="Margin" Value="0,0,0,90"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="TextAlignment" Value="Center"/>
-        </Style>
-        <Style TargetType="{x:Type Button}">
-            <Setter Property="FontSize" Value="18"/>
-            <Setter Property="FontWeight" Value="Medium"/>
-            <Setter Property="Width" Value="90"/>
-            <Setter Property="Height" Value="35"/>
-        </Style>
-    </Window.Resources>
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="170"/>
-            <RowDefinition Height="80"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="160" />
-            <ColumnDefinition Width="140" />
-        </Grid.ColumnDefinitions>
+        Title="AddDebts" Height="350" Width="300">
+	<Window.Resources>
+		<Style TargetType="{x:Type TextBox}">
+			<Setter Property="FontSize" Value="20"/>
+			<Setter Property="FontFamily" Value="Segoe UI"/>
+			<Setter Property="Width" Value="90"/>
+			<Setter Property="Height" Value="35"/>
+			<Setter Property="Margin" Value="0,0,0,90"/>
+			<Setter Property="HorizontalAlignment" Value="Center"/>
+			<Setter Property="TextAlignment" Value="Center"/>
+		</Style>
+		<Style TargetType="{x:Type Button}">
+			<Setter Property="FontSize" Value="18"/>
+			<Setter Property="FontWeight" Value="Medium"/>
+			<Setter Property="Width" Value="90"/>
+			<Setter Property="Height" Value="35"/>
+		</Style>
+	</Window.Resources>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="170"/>
+			<RowDefinition Height="80"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="160" />
+			<ColumnDefinition Width="140" />
+		</Grid.ColumnDefinitions>
 
-        <TextBox
+		<TextBox
 			     Text="{Binding Path=NewDebtValue, Mode=OneWayToSource}"
                  Grid.Column="1"/>
-        
-        <Button 
+
+		<Button 
                 Grid.Column="1"
 			    Command="{Binding AddDebtsCommand, Mode=OneTime}"
 			    Content="Add Value" Margin="15">
-        </Button>
-        
-        <Button Grid.Row="1"
+		</Button>
+
+		<Button Grid.Row="1"
                 Name="closeButton"
                 Margin="0,0,0,20"
                 Command="{Binding CloseCommand, Mode=OneTime}"
                 >
-                Close
-        </Button>
+			Close
+		</Button>
 
-        <ListBox ItemsSource="{Binding Path=Debts}" 
+		<ListBox ItemsSource="{Binding Path=Debts}" 
                   Grid.Row="0"
                   Grid.Column="0"
                   Margin="15"				 
 				 BorderThickness="2">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock>
-                        <TextBlock.Text>
-                            <MultiBinding StringFormat="{}{0}   {1}">
-                                <Binding Path="LogTime" />
-                                <Binding Path="DebtsValue" />
-                            </MultiBinding>
-                        </TextBlock.Text>
-                    </TextBlock>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-        
-        
-    </Grid>
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<TextBlock>
+						<TextBlock.Text>
+							<MultiBinding StringFormat="{}{0}   {1}">
+								<Binding Path="LogTime" />
+								<Binding Path="DebtsValue" />
+							</MultiBinding>
+						</TextBlock.Text>
+					</TextBlock>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+		<Label Content="Tryk på tab for at validere værdien" HorizontalAlignment="Left" Margin="15,47,0,0" Grid.Row="1" VerticalAlignment="Top" Width="205" FontSize="10" Grid.ColumnSpan="2" Height="23"/>
+
+
+
+	</Grid>
 </Window>

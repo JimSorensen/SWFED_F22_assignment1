@@ -5,99 +5,99 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:the_debt_book.Views" xmlns:local1="clr-namespace:the_debt_book.ViewModels"
         mc:Ignorable="d"
-        Title="AddDebtorsWin" Height="300" Width="250"
+        Title="AddDebtorsWin" Height="350" Width="300"
         DataContext="{StaticResource MainViewModel}"
         >
 
-    <Window.Resources>
-        <Style TargetType="{x:Type TextBox}">
-            <Setter Property="FontSize" Value="18"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="Width" Value="205"/>
-            <Setter Property="Height" Value="30"/>
-            <Setter Property="TextAlignment" Value="Center"/>
-        </Style>
-        <Style TargetType="{x:Type Label}">
-            <Setter Property="FontSize" Value="30"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-        </Style>
-        <Style TargetType="{x:Type Button}">
-            <Setter Property="Margin" Value="20,0,20,20"/>
-            <Setter Property="FontWeight" Value="Medium"/>
-            <Setter Property="Width" Value="70"/>
-            <Setter Property="Height" Value="35"/>
-        </Style>
-    </Window.Resources>
-    <Grid Margin="10,10,5,10">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="60" />
-            <RowDefinition Height="55" />
-            <RowDefinition Height="55" />
-            <RowDefinition Height="90" />
-        </Grid.RowDefinitions>
+	<Window.Resources>
+		<Style TargetType="{x:Type TextBox}">
+			<Setter Property="FontSize" Value="18"/>
+			<Setter Property="HorizontalAlignment" Value="Center"/>
+			<Setter Property="Width" Value="205"/>
+			<Setter Property="Height" Value="30"/>
+			<Setter Property="TextAlignment" Value="Center"/>
+		</Style>
+		<Style TargetType="{x:Type Label}">
+			<Setter Property="FontSize" Value="30"/>
+			<Setter Property="FontWeight" Value="Bold"/>
+		</Style>
+		<Style TargetType="{x:Type Button}">
+			<Setter Property="Margin" Value="20,0,20,20"/>
+			<Setter Property="FontWeight" Value="Medium"/>
+			<Setter Property="Width" Value="70"/>
+			<Setter Property="Height" Value="35"/>
+		</Style>
+	</Window.Resources>
+	<Grid Margin="10,10,5,10">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="60" />
+			<RowDefinition Height="55" />
+			<RowDefinition Height="55" />
+			<RowDefinition Height="90" />
+		</Grid.RowDefinitions>
 
-        <Label 
+		<Label 
                    Grid.Row="0" 
                    HorizontalAlignment="Center" 
                    VerticalAlignment="Center">
-                   Add Debtor
-        </Label>
+			Add Debtor
+		</Label>
 
-        <TextBox Text="{Binding Path=FullName}" 
+		<TextBox Text="{Binding Path=FullName}" 
                  Grid.Row="1" 
                  Margin="0,12,0,13"
                  x:Name="Name"
                  />
-        <TextBlock Text="Name"
+		<TextBlock Text="Name"
                    Grid.Row="1"
                    IsHitTestVisible="False"
                    Foreground="DarkGray"
                    FontSize="18"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center">
-            <TextBlock.Style>
-                <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Visibility" Value="Collapsed"/>
-                    <Style.Triggers>
-                        <DataTrigger Binding="{Binding Text, ElementName= Name}" Value="">
-                            <Setter Property="Visibility" Value="Visible"/>
-                        </DataTrigger>
-                    </Style.Triggers>
-                </Style>
-            </TextBlock.Style>
-        </TextBlock>
-        <TextBox Text="{Binding Path=DebtsValue }" 
+			<TextBlock.Style>
+				<Style TargetType="{x:Type TextBlock}">
+					<Setter Property="Visibility" Value="Collapsed"/>
+					<Style.Triggers>
+						<DataTrigger Binding="{Binding Text, ElementName= Name}" Value="">
+							<Setter Property="Visibility" Value="Visible"/>
+						</DataTrigger>
+					</Style.Triggers>
+				</Style>
+			</TextBlock.Style>
+		</TextBlock>
+		<TextBox Text="{Binding Path=DebtsValue }" 
                  Grid.Row="2" 
                  Margin="0,13,0,12"
                  x:Name="Value"
                  />
-        <TextBlock Text="DebtsValue"
+		<TextBlock Text="DebtsValue"
                    Grid.Row="2"
                    IsHitTestVisible="False"
                    Foreground="DarkGray"
                    FontSize="18"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center">
-            <TextBlock.Style>
-                <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Visibility" Value="Collapsed"/>
-                    <Style.Triggers>
-                        <DataTrigger Binding="{Binding Text, ElementName= Value}" Value="">
-                            <Setter Property="Visibility" Value="Visible"/>
-                        </DataTrigger>
-                    </Style.Triggers>
-                </Style>
-            </TextBlock.Style>
-        </TextBlock>
+			<TextBlock.Style>
+				<Style TargetType="{x:Type TextBlock}">
+					<Setter Property="Visibility" Value="Collapsed"/>
+					<Style.Triggers>
+						<DataTrigger Binding="{Binding Text, ElementName= Value}" Value="">
+							<Setter Property="Visibility" Value="Visible"/>
+						</DataTrigger>
+					</Style.Triggers>
+				</Style>
+			</TextBlock.Style>
+		</TextBlock>
 
-        <Button Grid.Row="3" 
+		<Button Grid.Row="3" 
                 HorizontalAlignment="Left"
                 Command="{Binding SaveDebtorCommand, Mode=OneTime}"
                 Content="Save" Margin="15"
                 />
 
 
-        <Button Grid.Row="3"
+		<Button Grid.Row="3"
                 HorizontalAlignment="Right"
                 Name="cancelButton" 
                 IsEnabled="True"
@@ -105,5 +105,6 @@
                 Command="{Binding CloseCommand, Mode=OneTime}"
 				Margin="15"
                 />
-    </Grid>
+		<Label Content="Tryk på tab for at validere værdien" HorizontalAlignment="Center" Margin="0,62,0,0" Grid.Row="3" VerticalAlignment="Top" Width="205" FontSize="10"/>
+	</Grid>
 </Window>
